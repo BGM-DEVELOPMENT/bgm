@@ -37,14 +37,6 @@ nav {
     margin-right: 2rem; /* Aggiungi un margine destro per creare un po' di spazio */
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: left;
-    gap: 3rem;
-    margin-left: left; /* Aggiunto per spostare le voci del menu a sinistra */
-}
-
 .link a{
     position: relative;
     padding-bottom: 0.75rem;
@@ -73,10 +65,11 @@ nav {
     padding: 1rem 2rem;
     font-size: 1rem;
     color: #fff;
+    border-radius: 15px; /* Aggiungi il border-radius qui */
     background-color: #333030;
-    border-radius: 5px;
+    border-color: #ff0000;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 5.0s ease;
     display: flex;
     align-items: center; /* Allinea verticalmente al centro */
 }
@@ -102,6 +95,8 @@ nav {
 
 .btn:hover{
     background-color: #ffffff;
+    border-color: #ff0000;
+    border-radius: 500px; /* Aggiungi il border-radius qui */
 }
 
 .btn h5{
@@ -115,9 +110,25 @@ nav {
     color: #000000;
 }
 
-.content h5{
+.contenuto h5{
     color: #ffffff;
 }
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin-left: auto; /* Sposta le voci del menu a destra */
+}
+
 
 .container{
     max-width: 1200px;
@@ -125,7 +136,19 @@ nav {
     padding: 5rem 2rem;
 }
 
+.partners{
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
 .cosa_offriamo{
+    max-width: 1200px;
+    margin: auto;
+    padding: 5rem 2rem;
+}
+
+.home{
     max-width: 1200px;
     margin: auto;
     padding: 5rem 2rem;
@@ -146,13 +169,14 @@ nav {
 header{
     position: relative;
     padding-top: 2rem;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 2rem;
+    justify-content: center; /* Centra orizzontalmente il contenuto */
 }
 
-header .content h4{
+header .contenuto h4{
     margin-bottom: 1rem;
     color: #ccc;
     font-size: 1rem;
@@ -163,11 +187,20 @@ header .content h4{
     left: 25%;
 }
 
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #18181B;
+}
+
 .cosa_offriamo h2 {
     left: 25%;
 }
 
-header .content h1{
+header .contenuto h1{
     color: #fff;
     margin-bottom: 1rem;
     font-size: 3rem;
@@ -175,14 +208,14 @@ header .content h1{
     line-height: 4rem;
 }
 
-header .content h1, header .content h3 {
+header .contenuto h1, header .contenuto h3 {
     color: #fff;
     display: inline; /* Imposta gli h1 e h3 come elementi inline */
     white-space: nowrap; /* Impedisce il wrapping del testo */
 }
 
 
-header .content p{
+header .contenuto p{
     margin-bottom: 2rem;
     color: #ccc;
 }
@@ -218,54 +251,67 @@ section .header{
     font-weight: 600;
 }
 
-.features{
+.lista_cosa_offriamo{
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 }
 
-.features .card{
+.centered-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.centered-cards .card {
+    margin: 1rem; /* Spazio tra le card */
+    flex: 1;
+    max-width: 300px; /* Larghezza massima delle card */
+}
+
+
+.lista_cosa_offriamo .card{
     background-color: #27272a;
     padding: 1rem;
-    border: 2px solid transparent;
+    border: 3.5px solid transparent;
     border-radius: 15px;
-    transition: all 0.3s ease;
+    transition: all 1.0s ease;
 }
 
-.features .card:hover{
+.lista_cosa_offriamo .card:hover{
     background-color: #323232;
-    border-color: #fff;
+    border-color: #ff0000;
 }
 
-.features .card span{
+.lista_cosa_offriamo .card span{
     display: inline-block;
     background-color: #ff0000;
     padding: 2px 9px;
     margin-bottom: 1rem;
     font-size: 1.75rem;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 15px;
 }
 
-.features .card h4{
+.lista_cosa_offriamo .card h4{
     margin-bottom: 0.5rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
 }
 
-.features .card p{
+.lista_cosa_offriamo .card p{
     color: #ccc;
     margin-bottom: 1rem;
 }
 
-.features .card a{
+.lista_cosa_offriamo .card a{
     color: #fff;
     transition: all 0.3s ease;
 }
 
-.features .card a:hover{
+.lista_cosa_offriamo .card a:hover{
     color: #ff0000;
 }
 
@@ -276,41 +322,41 @@ section .header{
     color: #ccc;
 }
 
-.pricing{
+.lista_cards{
     margin-top: 4rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
 }
 
-.pricing .card{
+.lista_cards .card{
     padding: 3rem 2rem;
     background-color: #3d3d44;
     display: flex;
     flex-direction: column;
-    border: 2px solid transparent;
+    border: 3.5px solid transparent;
     border-radius: 15px;
-    transition: all 0.3s ease;
+    transition: all 1.0s ease;
 }
 
-.pricing .card:hover{
+.lista_cards .card:hover{
     background-color: #323232;
-    border-color: #fff;
+    border-color: #ff0000;
 }
 
-.pricing .card .content{
+.lista_cards .card .contenuto{
     flex: 1;
     margin-bottom: 2rem;
 }
 
-.pricing .card h4{
+.lista_cards .card h4{
     margin-bottom: 1rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-.pricing .card h3{
+.lista_cards .card h3{
     color: #fff;
     padding-bottom: 1rem;
     margin-bottom: 2rem;
@@ -319,24 +365,24 @@ section .header{
     border-bottom: 2px dashed #fff;
 }
 
-.pricing .card p{
+.lista_cards .card p{
     color: #fff;
     margin-bottom: 0.75rem;
 }
 
-.pricing .card p i{
+.lista_cards .card p i{
     color: #ccc;
     font-size: 1.2rem;
     margin-right: 0.3rem;
 }
 
-.pricing .card button{
+.lista_cards .card button{
     color: #fff;
     background-color: transparent;
     border: 2px solid #fff;
 }
 
-.pricing .card button:hover{
+.lista_cards .card button:hover{
     background-color: #ff0000;
     border-color: #ff0000;
 }
@@ -348,6 +394,10 @@ section .header{
     color: #fff;
     font-size: 0.8rem;
     text-align: center;
+}
+
+.copyright a{
+    color: #ff0000;
 }
 
 @media (max-width: 1200px) {
@@ -370,21 +420,21 @@ section .header{
         margin: 0 auto;
     }
 
-    .features, .pricing {
+    .lista_cosa_offriamo, .lista_cards {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .features .card, .pricing .card {
+    .lista_cosa_offriamo .card, .lista_cards .card {
         text-align: center;
     }
 }
 
 @media (max-width: 768px) {
-    .features, .pricing {
+    .lista_cosa_offriamo, .lista_cards {
         grid-template-columns: 1fr;
     }
 
-    .features .card span, .pricing .card .content {
+    .lista_cosa_offriamo .card span, .lista_cards .card .contenuto {
         display: block;
         margin: 0 auto;
     }
